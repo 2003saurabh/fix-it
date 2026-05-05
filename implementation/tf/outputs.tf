@@ -1,0 +1,9 @@
+output "vpc_id" { value = aws_vpc.main.id }
+output "raw_bucket" { value = aws_s3_bucket.raw.id }
+output "enriched_bucket" { value = aws_s3_bucket.enriched.id }
+output "ecr_repo" { value = aws_ecr_repository.main.repository_url }
+output "ecs_cluster" { value = aws_ecs_cluster.main.name }
+output "step_function" { value = aws_sfn_state_machine.pipeline.name }
+output "sns_topic" { value = aws_sns_topic.alerts.arn }
+output "redshift_endpoint" { value = aws_redshiftserverless_workgroup.main.endpoint }
+output "dashboard" { value = "https://${var.region}.console.aws.amazon.com/cloudwatch/home?region=${var.region}#dashboards:name=${aws_cloudwatch_dashboard.main.dashboard_name}" }
